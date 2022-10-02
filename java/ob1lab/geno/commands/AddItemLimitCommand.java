@@ -9,7 +9,6 @@ import net.minecraft.block.Block;
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.Commands;
 import net.minecraft.entity.player.ServerPlayerEntity;
-import ob1lab.geno.Message;
 
 import java.util.List;
 import java.util.Objects;

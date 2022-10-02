@@ -1,4 +1,4 @@
-package ob1lab.geno;
+package ob1lab.geno.commands;
 
 import com.google.common.collect.Lists;
 import net.minecraft.command.CommandSource;
@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 public enum Message {
-    onLimit, onDelete, itemNotInList, itemNotTileEntity, addItemToLimitList, onUpdateItemToLimitList, incorrectPage, pageUp, pageDown, pageDownZero, pageDownFirst, pageDownLast, delete, documentation, adminBypassText;
+    onLimit, onDelete, itemNotInList, itemNotTileEntity, addItemToLimitList, onUpdateItemToLimitList, incorrectPage, pageUp, pageDown, pageDownZero, pageDownFirst, pageDownLast, delete, documentation, adminBypassText, updateConfigText, inChunkOnLimit;
     private List<String> msg;
     public static void load(Map<String, String> messageList) {
         for (Message message: Message.values()) {

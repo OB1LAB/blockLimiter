@@ -4,7 +4,6 @@ import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.Commands;
-import ob1lab.geno.Message;
 import ob1lab.geno.config.GenoConfig;
 
 import static ob1lab.geno.Geno.limitedList;

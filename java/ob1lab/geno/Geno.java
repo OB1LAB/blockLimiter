@@ -12,6 +12,7 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.event.server.FMLServerStoppingEvent;
 import net.minecraftforge.fml.loading.FMLPaths;
+import ob1lab.geno.commands.Message;
 import ob1lab.geno.config.GenoConfig;
 import ob1lab.geno.init.ModCommands;
 
@@ -50,27 +51,7 @@ public class Geno {
             data.add(block.limit);
             limitedList.put(block.id, data);
         }
-        adminBypass = GenoConfig.adminBypass.get();
-        useWebhook = GenoConfig.useWebhook.get();
-        webhookToken = GenoConfig.webhookToken.get();
-        webhookMsg = GenoConfig.webhookMsg.get();
-        Map<String, String> messageList = new HashMap<>();
-        messageList.put("onLimit", GenoConfig.onLimit.get());
-        messageList.put("onDelete", GenoConfig.onDelete.get());
-        messageList.put("itemNotInList", GenoConfig.itemNotInList.get());
-        messageList.put("itemNotTileEntity", GenoConfig.itemNotTileEntity.get());
-        messageList.put("addItemToLimitList", GenoConfig.addItemToLimitList.get());
-        messageList.put("onUpdateItemToLimitList", GenoConfig.onUpdateItemToLimitList.get());
-        messageList.put("incorrectPage", GenoConfig.incorrectPage.get());
-        messageList.put("pageUp", GenoConfig.pageUp.get());
-        messageList.put("pageDown", GenoConfig.pageDown.get());
-        messageList.put("pageDownZero", GenoConfig.pageDownZero.get());
-        messageList.put("pageDownFirst", GenoConfig.pageDownFirst.get());
-        messageList.put("pageDownLast", GenoConfig.pageDownLast.get());
-        messageList.put("delete", GenoConfig.delete.get());
-        messageList.put("documentation", GenoConfig.documentation.get());
-        messageList.put("adminBypassText", GenoConfig.adminBypassText.get());
-        Message.load(messageList);
+        loadConfig();
         isStarted = true;
     }
     @SubscribeEvent
@@ -101,5 +82,30 @@ public class Geno {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public static void loadConfig() {
+        adminBypass = GenoConfig.adminBypass.get();
+        useWebhook = GenoConfig.useWebhook.get();
+        webhookToken = GenoConfig.webhookToken.get();
+        webhookMsg = GenoConfig.webhookMsg.get();
+        Map<String, String> messageList = new HashMap<>();
+        messageList.put("onLimit", GenoConfig.onLimit.get());
+        messageList.put("onDelete", GenoConfig.onDelete.get());
+        messageList.put("itemNotInList", GenoConfig.itemNotInList.get());
+        messageList.put("itemNotTileEntity", GenoConfig.itemNotTileEntity.get());
+        messageList.put("addItemToLimitList", GenoConfig.addItemToLimitList.get());
+        messageList.put("onUpdateItemToLimitList", GenoConfig.onUpdateItemToLimitList.get());
+        messageList.put("incorrectPage", GenoConfig.incorrectPage.get());
+        messageList.put("pageUp", GenoConfig.pageUp.get());
+        messageList.put("pageDown", GenoConfig.pageDown.get());
+        messageList.put("pageDownZero", GenoConfig.pageDownZero.get());
+        messageList.put("pageDownFirst", GenoConfig.pageDownFirst.get());
+        messageList.put("pageDownLast", GenoConfig.pageDownLast.get());
+        messageList.put("delete", GenoConfig.delete.get());
+        messageList.put("documentation", GenoConfig.documentation.get());
+        messageList.put("adminBypassText", GenoConfig.adminBypassText.get());
+        messageList.put("updateConfigText", GenoConfig.updateConfigText.get());
+        messageList.put("inChunkOnLimit", GenoConfig.inChunkOnLimit.get());
+        Message.load(messageList);
     }
 }

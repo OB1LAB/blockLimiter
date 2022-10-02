@@ -11,7 +11,7 @@ import net.minecraftforge.event.world.ChunkEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import ob1lab.geno.Geno;
-import ob1lab.geno.Message;
+import ob1lab.geno.commands.Message;
 import ob1lab.geno.Requests;
 
 import java.util.HashMap;
@@ -35,7 +35,7 @@ public class ModEvents {
                     count = count + 1;
                     if (count > max_count) {
                         if (player != null) {
-                            Message.onLimit.replace("{item}", blockName).replace("{limit}", String.valueOf(max_count)).send(player.getCommandSource());
+                            Message.onLimit.replace("{item}", (String) limitedList.get(blockName).get(0)).replace("{limit}", String.valueOf(max_count)).send(player.getCommandSource());
                         }
                         event.setCanceled(true);
                         return;

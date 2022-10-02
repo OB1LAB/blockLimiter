@@ -3,7 +3,6 @@ package ob1lab.geno.commands;
 import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.Commands;
-import ob1lab.geno.Message;
 
 public class InfoCommand {
     public static void register(CommandDispatcher<CommandSource> dispatcher) {

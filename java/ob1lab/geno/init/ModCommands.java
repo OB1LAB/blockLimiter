@@ -17,5 +17,7 @@ public class ModCommands {
         ListPageCommand.register(commandDispatcher);
         InfoCommand.register(commandDispatcher);
         AdminBypassCommand.register(commandDispatcher);
+        UpdateConfigCommand.register(commandDispatcher);
+        CheckChunkCommand.register(commandDispatcher);
     }
 }
